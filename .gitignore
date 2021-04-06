@@ -9,8 +9,8 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
-/Library/
-/Logs/
+Library
+Logs
 
 
 # MemoryCaptures can get excessive in size.
