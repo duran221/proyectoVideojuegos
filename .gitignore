@@ -17,6 +17,7 @@ Logs
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
 
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
