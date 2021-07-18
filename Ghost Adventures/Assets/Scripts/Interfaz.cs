@@ -37,6 +37,10 @@ public class Interfaz : MonoBehaviour
             print(this.vidas);
             this.Gvidas.GetComponent<Text>().text="Vidas: "+this.vidas;
         }
+        if(other.tag=="Granada"){
+            this.vidas--;
+        }
+
         
     }
     
