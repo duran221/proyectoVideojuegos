@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemigos
   - aumentoVida
+  - Granada
   layers:
   - Default
   - TransparentFX
