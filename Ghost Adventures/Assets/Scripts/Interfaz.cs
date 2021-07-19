@@ -25,7 +25,7 @@ public class Interfaz : MonoBehaviour
         this.Gcronometro.GetComponent<Text>().text="Time: "+this.cronometro++;
     }
     void OnTriggerEnter(Collider other)
-    {   print("estoy aqui");
+    {  // print("estoy aqui");
         if(other.tag=="Enemigos")
         {   
             this.vidas--;
@@ -37,8 +37,10 @@ public class Interfaz : MonoBehaviour
             print(this.vidas);
             this.Gvidas.GetComponent<Text>().text="Vidas: "+this.vidas;
         }
+        
         if(other.tag=="Granada"){
             this.vidas--;
+            this.Gvidas.GetComponent<Text>().text="Vidas: "+this.vidas;
         }
 
         
