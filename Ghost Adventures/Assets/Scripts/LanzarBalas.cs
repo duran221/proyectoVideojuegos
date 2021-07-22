@@ -35,6 +35,7 @@ public class LanzarBalas : MonoBehaviour
             
             //Destroy (Bala1, 0.1f);
             //Destroy (Bala2, 0.1f);
+            this.GetComponent<AudioSource>().Play();
             yield return new WaitForSeconds(3);
         }
     }

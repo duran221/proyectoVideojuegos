@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet Bill Cannon
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b413fa893bd4b214fb003fc07509609d, type: 3}
+      propertyPath: m_TagString
+      value: Enemigos
+      objectReference: {fileID: 0}
     - target: {fileID: 3435137052136127095, guid: b413fa893bd4b214fb003fc07509609d, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
