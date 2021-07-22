@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ComportamientoSlimes : MonoBehaviour
 {
@@ -41,9 +42,14 @@ public class ComportamientoSlimes : MonoBehaviour
         }
     }
         void OnTriggerEnter(Collider other){
-        if(other.tag=="Granada"){
-            this.Particula.GetComponent<ParticleSystem>().Play();
-            Destroy(this.gameObject,3f);
-        }
+            try{
+                if(other.tag=="Granada"){
+                    this.Particula.GetComponent<ParticleSystem>().Play();
+                    Destroy(this.gameObject,3f);
+                }
+            }catch(Exception ex){
+               
+            }
+                
     }
 }
