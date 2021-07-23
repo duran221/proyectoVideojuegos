@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemigoPersigue : MonoBehaviour
 {
@@ -46,11 +47,20 @@ public class EnemigoPersigue : MonoBehaviour
         }
     }
     void OnTriggerEnter(Collider other){
-        if(other.tag=="Granada"){
+        try
+        {
+            if(other.tag=="Granada"){
             this.Particula.GetComponent<ParticleSystem>().Play();
             this.Morir();
             Destroy(this.gameObject,5f);
+            }
+        }catch (Exception e){
+            
         }
+
+        
+
+       
     }
 
     void DetectarPersonaje(){
