@@ -10,6 +10,7 @@ public class Interfaz : MonoBehaviour
     public GameObject Gvidas;
     public GameObject Gcronometro;
     public GameObject GameOver;
+    public GameObject Winner;
     private int vidas;
     private float cronometro;
     void Start()
@@ -24,7 +25,7 @@ public class Interfaz : MonoBehaviour
     void Update()
     {
         this.cronometro -= Time.deltaTime;
-        this.Gcronometro.GetComponent<Text>().text="Time: "+this.cronometro++;
+        this.Gcronometro.GetComponent<Text>().text="Time: "+this.cronometro.ToString("f0");
     }
     void OnTriggerEnter(Collider other)
     {  // print("estoy aqui");
@@ -35,7 +36,7 @@ public class Interfaz : MonoBehaviour
         }
 
         if(this.vidas==-1){
-            Time.timeScale = 0.2f;
+            Time.timeScale = 0.05f;
             this.GameOver.SetActive(true);
             
             StartCoroutine("Carga");
@@ -45,19 +46,25 @@ public class Interfaz : MonoBehaviour
             this.vidas=this.vidas+1;
             print(this.vidas);
             this.Gvidas.GetComponent<Text>().text="Vidas: "+this.vidas;
-            //Destroy(this.GetComponent,3f);
+            
         }
         
         if(other.tag=="Granada"){
             this.vidas--;
             this.Gvidas.GetComponent<Text>().text="Vidas: "+this.vidas;
         }
+        if(other.tag == "Meta")
+        {
+            Time.timeScale = 0.05f;
+            this.Winner.SetActive(true);
+            StartCoroutine("Carga");
+        }
 
         
     }
      IEnumerator Carga()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(0);
         
     }
