@@ -17,9 +17,9 @@ public class Granada : MonoBehaviour
         
     }
     void OnTriggerEnter(Collider other){
-        if(other.tag== "Player" || other.tag== "Enemigos"){
+        if( other.tag== "Enemigos"){
             this.Particula.GetComponent<ParticleSystem>().Play();
-            Destroy(this.gameObject,3f);
+            Destroy(this.gameObject,4f);
         }
     }
 }
